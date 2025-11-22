@@ -1,5 +1,5 @@
 import {describe, expect, it } from 'vitest';
-import { makeGreeting, addSignature , decorateMessage, createFullGreeting} from './greeting-utils';
+import { makeGreeting, addSignature , decorateMessage, createFullGreeting, createDecoratedMessage, signedGreeting} from './greeting-utils';
 
 describe("make greeting", () => {
 
@@ -49,5 +49,19 @@ describe(' will produce a decorated message with signature', () =>{
     it('will wrap your signed message with flowers', () => {
         const result = createFullGreeting('TyQuincia', 'Anniversary', "Renee'");
         expect(result).toBe("🌸🌸Happy Anniversary , TyQuincia - from Renee'🌸🌸")
+    })
+})
+
+describe('will decorate your greeting without a signature', () => {
+    it('will wrap your unsigned message with flowers', () => {
+        const result = createDecoratedMessage('Jasmine', 'Graduation');
+        expect(result).toBe("🌸🌸Happy Graduation , Jasmine🌸🌸")
+    })
+})
+
+describe('will add a signature to greeting with no decoration', () => {
+    it('will tell who the message is from', () => {
+        const result = signedGreeting('Janet', 'Work Anniversary', 'Ty');
+        expect(result).toBe('Happy Work Anniversary , Janet - from Ty')
     })
 })

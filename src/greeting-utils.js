@@ -18,3 +18,14 @@ export function createFullGreeting(name, occasion, from){
     const signed = addSignature(greeting, from);
     return decorateMessage(signed);
 }
+
+export function createDecoratedMessage(name, occasion){
+    const greeting = makeGreeting(name, occasion);
+    return decorateMessage(greeting);
+}
+
+export function signedGreeting(name, occasion, from){
+    const greeting = makeGreeting(name, occasion);
+    const signed = addSignature(greeting, from);
+    return signed;
+}
