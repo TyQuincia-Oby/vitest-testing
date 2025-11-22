@@ -1,6 +1,3 @@
-export function add (a,b){
-    return a + b;
-}
 
 // export function toSnakeCase(text){
 //     //This function will convert the text to snake_case by 
